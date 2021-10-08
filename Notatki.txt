@@ -1,0 +1,9 @@
+{"character":{"href":"https://eu.api.blizzard.com/profile/wow/character/burning-legion/coldcoffee?namespace=profile-eu"},
+"protected_character":{"href":"https://eu.api.blizzard.com/profile/user/wow/protected-character/524-lu?namespace=profile-eu"},
+"name":"Coldcoffee","id":126288654,"realm":{"key":{"href":"https://eu.api.blizzard.com/data/wow/realm/524?namespace=dynamic-eu"},
+"name":"Burning Legion","id":524,"slug":"burning-legion"},"playable_class":{"key":{"href":"https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-9.1.0_39069-eu"},
+"name":"Mage","id":8},"playable_race":{"key":{"href":"https://eu.api.blizzard.com/data/wow/playable-race/8?namespace=static-9.1.0_39069-eu"},
+"name":"Troll","id":8},"gender":{"type":"FEMALE","name":"Female"},"faction":{"type":"HORDE","name":"Horde"},"level":60}
+
+
+Aby uzyskać dane o postaci potrzebujesz realm id w przypadku BL to 524 oraz name id coldcoffee 126288654 dostajac sie tutaj otrzymujesz informacjie o postaci oraz mozesz wejsc w inne endpoity

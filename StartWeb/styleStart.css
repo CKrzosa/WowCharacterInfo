@@ -1,0 +1,97 @@
+*{
+margin: 0;
+padding: 0;
+
+}
+header{
+    display: flex;
+    height: 20vh;
+    background-color: #1B1717;
+    align-items: center;
+
+}
+
+header p{
+    margin-left: 5vh;
+    color: #EEEBDD ;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background-color:#EEEBDD ;
+    justify-content: center;
+    align-items: center;
+}
+
+#name{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+
+form{
+    
+
+
+}
+
+
+
+#labelNick{
+    font-size: 1.5vw;
+    color: #1B1717;
+    margin-right: 6.2vw;
+
+    font-weight: bold;
+ 
+}
+
+#lableServerName{
+ 
+    font-size: 1.5vw;
+    color: #1B1717;
+    font-weight: bold;
+
+  
+
+}
+
+
+
+
+#nick{
+
+width: 13vw;
+height: 5vh;
+font-size: 1.5vw;
+outline-color: #810000;
+margin: 10px;
+}
+#serverName{
+ 
+width: 13vw;
+height: 5vh;
+font-size: 1.5vw;
+outline-color: #810000;
+margin: 10px;
+}
+
+
+
+
+#submit{
+
+    height: 5vh;
+    width: 5vw;
+    background-color: #1B1717;
+    color: #EEEBDD ;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1vw;
+    margin-top: 2vh ;
+}
