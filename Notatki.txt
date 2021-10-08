@@ -7,3 +7,5 @@
 
 
 Aby uzyskać dane o postaci potrzebujesz realm id w przypadku BL to 524 oraz name id coldcoffee 126288654 dostajac sie tutaj otrzymujesz informacjie o postaci oraz mozesz wejsc w inne endpoity
+
+tsc --watch --outDir views sprawia że typescript pisze sie do folderu views 
