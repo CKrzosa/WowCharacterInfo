@@ -23,6 +23,15 @@ let player: Player = {
     playerRealm: "burning-legion"
 };
 
+//fetch do nicku i server nama
+
+fetch('/main', {
+    method: 'POST'
+}).then((data) => data.json()).then((data) => { console.log(data) })
+
+
+
+
 fetch('https://eu.battle.net/oauth/token', {
     method: 'POST', body: `grant_type=client_credentials&client_id=${wow.ClientID}&client_secret=${wow.Secret}`, headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
