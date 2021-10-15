@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 const port = 5000
 app.use(express.static('views'))
 
@@ -12,12 +13,14 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     res.render('indexStart')
+
 })
 
 app.post('/main', (req, res) => {
-
-    res.render('index', console.log({ nick: req.body }));
-
+    res.render('index', {
+        nick: req.body.nick,
+        server: req.body.serverName
+    });
 })
 
 app.listen(port, () => {

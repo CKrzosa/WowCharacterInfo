@@ -1,5 +1,7 @@
 //Client ID c04e4c250c59419fab4964ce7ce5ff75 Cezary95 nBsv7f2nizCpTcTowfdzH2MJYv5PdCqQ
 
+
+
 let wow = {
     Secret: "nBsv7f2nizCpTcTowfdzH2MJYv5PdCqQ",
     ClientID: "c04e4c250c59419fab4964ce7ce5ff75",
@@ -9,25 +11,33 @@ let wow = {
 
 interface Player {
 
-    playerName: string;
+    playerNick: string;
 
-    playerRealm: string;
-
+    playerServer: string;
 
 }
+declare let playerData: Player
 
 let player: Player = {
 
-    playerName: "bearthorn",
+    playerNick: playerData.playerNick,
 
-    playerRealm: "burning-legion"
+    playerServer: playerData.playerServer
 };
 
 //fetch do nicku i server nama
 
-fetch('/main', {
-    method: 'POST'
-}).then((data) => data.json()).then((data) => { console.log(data) })
+
+// async function playerData(): <string> {
+
+//     let getData = await fetch('/main', {
+//         method: 'POST'
+//     })
+//     return getData
+
+// }
+
+// playerData()
 
 
 
@@ -41,11 +51,11 @@ fetch('https://eu.battle.net/oauth/token', {
 
 
     //Specka
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/specializations?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane.active_specialization.name))
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/specializations?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane.active_specialization.name))
 
 
     // raid progress
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
 
         //Dostep do danych o raidzie 
 
@@ -82,17 +92,26 @@ fetch('https://eu.battle.net/oauth/token', {
         //[0].instance.name//["Sanctum of Domination"].modes[2].progress.completed_count
     })
 
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane))
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane))
 
 
     //dungeon score 
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/mythic-keystone-profile?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane.current_mythic_rating.rating))
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/mythic-keystone-profile?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane.current_mythic_rating.rating))
 
     //Avatar postaci
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/character-media?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane))
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/character-media?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
+        console.log(dane.assets[3].value)
+
+        let avatarID = document.getElementById('avatar');
+        let img = document.createElement("img");
+        img.src = dane.assets[3].value
+        img.id = "avatarID"
+
+        avatarID.appendChild(img)
+    })
 
     //PVP
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${player.playerRealm}/${player.playerName}/pvp-bracket/2v2?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${playerData.playerServer}/${playerData.playerNick}/pvp-bracket/2v2?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
 
         console.log(dane)
 
@@ -106,6 +125,8 @@ fetch('https://eu.battle.net/oauth/token', {
 
 
     })
+
+
 
 }
 )

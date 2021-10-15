@@ -13,26 +13,55 @@
 
     <header>
 
-        <p>WoW</p>
 
         <p>Know the player</p>
 
     </header>
     <article>
-        <div class="charcterName">
+        <div id="left">
+            <div class="charcterName">
 
-            <p>Name: ColdCoffee</p>
-            <p>Realm: Bruning Onion</p>
-            <p>Guild: Path Finders</p>
+                <p>Name: <%= nick %>
+                </p>
+                <p>Realm: <%= server %>
+                </p>
+
+
+            </div>
+
+            <p id='avatar'></p>
+        </div>
+
+        <div id="right">
+
+            <div id="raidProgress">
+
+            </div>
+
+            <div id="DungeonScore">
+
+            </div>
+
+            <div id="PVP">
+
+            </div>
+
+
 
 
         </div>
-
     </article>
     <footer></footer>
 
 
+    <script>
+        let playerData = {
 
+            playerNick: `<%= nick %>`,
+            playerServer: `<%= server %>`
+        }
+
+    </script>
 
 
 
