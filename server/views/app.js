@@ -77,4 +77,34 @@ fetch('https://eu.battle.net/oauth/token', {
         }
     });
 });
+//Mythic Progress bar 
+function updateMythic(width) {
+    var element = document.getElementById("progressBarMythic");
+    var identity = setInterval(scene, 10);
+    function scene() {
+        if (width >= 100) {
+            clearInterval(identity);
+        }
+        else {
+            width++;
+            element.style.width = width + '%';
+        }
+    }
+}
+updateMythic(25);
+//HC progress bar 
+function updateHc(width) {
+    var element = document.getElementById("progressBarHC");
+    var identity = setInterval(scene, 10);
+    function scene() {
+        if (width >= 100) {
+            clearInterval(identity);
+        }
+        else {
+            width++;
+            element.style.width = width + '%';
+        }
+    }
+}
+updateHc(0);
 //# sourceMappingURL=app.js.map

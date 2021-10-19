@@ -1,4 +1,4 @@
-
+/* mian */
 
 *{
 
@@ -26,10 +26,17 @@ header p{
 }
 
 article{
-   
+    display: flex;
     height: 80vh;
     background: #EEEBDD ;
     color:#1B1717 ;
+    flex-direction: row;
+}
+
+/* Left side */
+#left{
+    border-right: 0.5vw #1B1717 solid;
+
 }
 
 
@@ -48,16 +55,101 @@ color:#1B1717 ;
 
 
 
-
-
-
-
 #avatarID{
    
-    height: 70vh;
+    height: 67vh;
     width: 28vw;
     object-fit: cover;
     border: none;
     
   
 }
+
+/* 
+Right side */
+
+#right{
+   
+    display: flex;
+    flex-direction: row;
+    
+  
+    align-items: center;
+    
+   
+}
+
+#raidProgress{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+ 
+    height: 80vh;
+    padding-right:2vw;
+    border-right: 0.5vw #1B1717 solid;
+}
+
+#DungeonScore{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right:4vw;
+  align-items: center;
+    height: 80vh;
+    
+    border-right: 0.5vw #1B1717 solid;
+}
+#DungeonScore p{
+    margin-left: 3vw;
+    margin-bottom: 4vh;
+}
+#DungeonScore img{
+   height: 8vh;
+    margin-left:4vw;
+}
+
+#PVP{
+    display: flex;
+ 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+}
+
+
+#PVP img{
+
+    height: 20vh;
+
+}
+
+#raidProgress p{
+    margin-left:4vw; 
+   
+    width: 15vw;
+}
+
+
+#progressBarMythic {
+    width: 1%;
+    height: 6vh;
+    background-color: #810000;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+    margin-left: 1vw;
+    margin-bottom: 10vh;
+  }
+
+  #progressBarHC {
+    width: 1%;
+    height: 6vh;
+    background-color: #810000;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+    margin-left: 1vw;
+  }
