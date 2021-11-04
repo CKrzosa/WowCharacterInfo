@@ -102,7 +102,7 @@ Right side */
     border-right: 0.5vw #1B1717 solid;
 }
 #DungeonScore p{
-    margin-left: 3vw;
+    margin-left: 2vw;
     margin-bottom: 4vh;
 }
 #DungeonScore img{
@@ -126,13 +126,19 @@ Right side */
 
 }
 
-#raidProgress p{
+.name{
     margin-left:4vw; 
    
     width: 15vw;
 }
+#myNumber{
+    margin-bottom: 3vh;
+    margin-left:8vw; 
 
-
+}
+#hcNumber{
+    margin-left:8vw; 
+}
 #progressBarMythic {
     width: 1%;
     height: 6vh;
@@ -141,7 +147,7 @@ Right side */
     line-height: 32px;
     color: black;
     margin-left: 1vw;
-    margin-bottom: 10vh;
+    margin-bottom: 1vh;
   }
 
   #progressBarHC {
@@ -152,4 +158,5 @@ Right side */
     line-height: 32px;
     color: black;
     margin-left: 1vw;
+    margin-bottom: 1vh;
   }
