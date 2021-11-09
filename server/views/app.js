@@ -130,12 +130,21 @@ fetch('https://eu.battle.net/oauth/token', {
     fetch("https://eu.api.blizzard.com/profile/wow/character/" + server + "/" + nick + "/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=" + dane.access_token, {}).then(function (dane) { return dane.json(); }).then(function (dane) { return console.log(dane); });
     //dungeon score 
     fetch("https://eu.api.blizzard.com/profile/wow/character/" + server + "/" + nick + "/mythic-keystone-profile?namespace=profile-eu&locale=en_GB&access_token=" + dane.access_token, {}).then(function (dane) { return dane.json(); }).then(function (dane) {
-        var score = dane.current_mythic_rating.rating;
-        var hold = document.getElementById("score");
-        var para = document.createElement("p");
-        var node = document.createTextNode("Dungeon score: " + score.toFixed(0));
-        para.appendChild(node);
-        hold.appendChild(para);
+        if (dane.current_mythic_rating === undefined) {
+            var hold = document.getElementById("score");
+            var para = document.createElement("p");
+            var node = document.createTextNode("Dungeon score: 0");
+            para.appendChild(node);
+            hold.appendChild(para);
+        }
+        else {
+            var score = dane.current_mythic_rating.rating;
+            var hold = document.getElementById("score");
+            var para = document.createElement("p");
+            var node = document.createTextNode("Dungeon score: " + score.toFixed(0));
+            para.appendChild(node);
+            hold.appendChild(para);
+        }
     });
     //Avatar postaci
     fetch("https://eu.api.blizzard.com/profile/wow/character/" + server + "/" + nick + "/character-media?namespace=profile-eu&locale=en_GB&access_token=" + dane.access_token, {}).then(function (dane) { return dane.json(); }).then(function (dane) {

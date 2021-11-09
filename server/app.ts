@@ -208,14 +208,22 @@ fetch('https://eu.battle.net/oauth/token', {
     fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/mythic-keystone-profile?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
 
 
-        let score = dane.current_mythic_rating.rating
+        if (dane.current_mythic_rating === undefined) {
+            let hold = document.getElementById("score")
+            const para = document.createElement("p");
+            const node = document.createTextNode(`Dungeon score: 0`);
+            para.appendChild(node);
+            hold.appendChild(para)
 
-        let hold = document.getElementById("score")
-        const para = document.createElement("p");
-        const node = document.createTextNode(`Dungeon score: ${score.toFixed(0)}`);
-        para.appendChild(node);
-        hold.appendChild(para)
+        } else {
+            let score = dane.current_mythic_rating.rating
 
+            let hold = document.getElementById("score")
+            const para = document.createElement("p");
+            const node = document.createTextNode(`Dungeon score: ${score.toFixed(0)}`);
+            para.appendChild(node);
+            hold.appendChild(para)
+        }
     })
 
     //Avatar postaci
