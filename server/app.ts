@@ -239,6 +239,17 @@ fetch('https://eu.battle.net/oauth/token', {
 
 
         let para1 = document.createElement("p");
+        let er = 404
+
+        if (er === dane.code) {
+            img2vs2.src = 'Foto/RJ6XE5WS8D6G1528483047503.png'
+            let text2vs2 = document.createTextNode(`2v2 Arena raitng: 0`);
+            para1.appendChild(text2vs2)
+            p2vs2.appendChild(para1)
+
+        }
+
+
 
 
         let season = dane.season.id
@@ -275,8 +286,9 @@ fetch('https://eu.battle.net/oauth/token', {
 
     //PVP 3vs3
     fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/pvp-bracket/3v3?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
-
+        let er = 404
         console.log(dane)
+
         let img3vs3 = document.getElementById("img3vs3") as HTMLImageElement
         let p3vs3 = document.getElementById("p3vs3")
 
@@ -284,12 +296,20 @@ fetch('https://eu.battle.net/oauth/token', {
 
         let para2 = document.createElement("p");
 
+
+
+
+
+        if (er === dane.code) {
+            img3vs3.src = 'Foto/RJ6XE5WS8D6G1528483047503.png'
+            let text3vs3 = document.createTextNode(`3v3 Arena raitng: 0`);
+            para2.appendChild(text3vs3)
+            p3vs3.appendChild(para2)
+        }
+
         let season = dane.season.id
         let rating = dane.rating
-
         let text2 = document.createTextNode(`3v3 Arena raitng: ${rating}`);
-
-
         if (season != 31) {
 
             img3vs3.src = 'Foto/RJ6XE5WS8D6G1528483047503.png'

@@ -152,6 +152,13 @@ fetch('https://eu.battle.net/oauth/token', {
         var img2vs2 = document.getElementById("img2vs2");
         var p2vs2 = document.getElementById("p2vs2");
         var para1 = document.createElement("p");
+        var er = 404;
+        if (er === dane.code) {
+            img2vs2.src = 'Foto/RJ6XE5WS8D6G1528483047503.png';
+            var text2vs2 = document.createTextNode("2v2 Arena raitng: 0");
+            para1.appendChild(text2vs2);
+            p2vs2.appendChild(para1);
+        }
         var season = dane.season.id;
         var rating = dane.rating;
         var text1 = document.createTextNode("2v2 Arena raitng: " + rating);
@@ -186,11 +193,18 @@ fetch('https://eu.battle.net/oauth/token', {
     });
     //PVP 3vs3
     fetch("https://eu.api.blizzard.com/profile/wow/character/" + server + "/" + nick + "/pvp-bracket/3v3?namespace=profile-eu&locale=en_GB&access_token=" + dane.access_token, {}).then(function (dane) { return dane.json(); }).then(function (dane) {
+        var er = 404;
         console.log(dane);
         var img3vs3 = document.getElementById("img3vs3");
         var p3vs3 = document.getElementById("p3vs3");
         var img2 = document.createElement('img');
         var para2 = document.createElement("p");
+        if (er === dane.code) {
+            img3vs3.src = 'Foto/RJ6XE5WS8D6G1528483047503.png';
+            var text3vs3 = document.createTextNode("3v3 Arena raitng: 0");
+            para2.appendChild(text3vs3);
+            p3vs3.appendChild(para2);
+        }
         var season = dane.season.id;
         var rating = dane.rating;
         var text2 = document.createTextNode("3v3 Arena raitng: " + rating);
