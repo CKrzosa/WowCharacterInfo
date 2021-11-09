@@ -50,19 +50,46 @@ fetch('https://eu.battle.net/oauth/token', {
 
 
     //Specka
-    fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/specializations?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => console.log(dane.active_specialization.name))
+    fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/specializations?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
+        if (404 === dane.code) {
+            window.location.replace("/")
+
+        }
+    })
 
 
     // raid progress mythic
     fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/encounters/raids?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
 
         //Dostep do danych o raidzie 
+        console.log(dane)
+        let isShadow = false
+        for (let j = 0; j < dane.expansions.length; j++) {
+            if (dane.expansions[j].expansion.name === "Shadowlands") {
+                isShadow = true
 
-        //dane na temat expansi
+            }
+
+        }
+        if (isShadow === false) {
+            updateMythic(0)
+            let hold = document.getElementById("myNumber")
+            const para = document.createElement("p");
+            const node = document.createTextNode(`0/10`);
+            para.appendChild(node);
+            hold.appendChild(para)
+
+        }
+
+
         let expansion = dane.expansions[dane.expansions.length - 1]
         //szukanie istancji po name sactum of domination
         let instances = expansion.instances
         let instances_index = -1
+
+
+
+
         for (let i = 0; i < instances.length; i++) {
 
             if (instances[i].instance.name === "Sanctum of Domination") {
@@ -120,6 +147,22 @@ fetch('https://eu.battle.net/oauth/token', {
         //szukanie istancji po name sactum of domination
         let instances = expansion.instances
         let instances_index = -1
+        let isShadow = false
+        for (let j = 0; j < dane.expansions.length; j++) {
+            if (dane.expansions[j].expansion.name === "Shadowlands") {
+                isShadow = true
+
+            }
+
+        }
+        if (isShadow === false) {
+            updateHc(0)
+            let hold = document.getElementById("hcNumber")
+            const para = document.createElement("p");
+            const node = document.createTextNode(`0/10`);
+            para.appendChild(node);
+            hold.appendChild(para)
+        }
         for (let i = 0; i < instances.length; i++) {
 
             if (instances[i].instance.name === "Sanctum of Domination") {
@@ -314,7 +357,7 @@ function updateHc(width) {
 }
 
 
-//Przycisk cofania
+
 //opsłuż kiedy nie znajdzie gracza
 //Obsluzyc 404 na postaci zeby 0 pokazywaly 
 //Dodac losowych graczy jako przyklad
