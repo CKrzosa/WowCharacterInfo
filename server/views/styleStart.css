@@ -21,10 +21,40 @@ header p{
 article{
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 70vh;
     background-color:#EEEBDD ;
     justify-content: center;
     align-items: center;
+}
+footer{
+    display: flex;
+    border-top:#1B1717 5px solid ;
+    height: 9.5vh;
+    background: #EEEBDD ;
+    color:#1B1717 ;
+    flex-direction: row; 
+}
+
+.player{
+
+    width: 25vw;
+    border-right:#1B1717 5px solid ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+#player4{
+    border: none;
+}
+
+#example{
+    position: absolute;
+    color:#1B1717 ;
+    
+    margin-top:  50vh;
+    font-size: 5vh;
+
 }
 
 #name{
@@ -60,8 +90,6 @@ form{
   
 
 }
-
-
 
 
 #nick{

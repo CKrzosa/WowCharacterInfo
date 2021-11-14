@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.render('indexStart')
 
 })
+app.get('/no', (req, res) => {
+    res.render('noPlayer')
+
+})
 
 app.post('/main', (req, res) => {
     res.render('index', {
@@ -22,6 +26,7 @@ app.post('/main', (req, res) => {
         server: req.body.serverName
     });
 })
+
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)

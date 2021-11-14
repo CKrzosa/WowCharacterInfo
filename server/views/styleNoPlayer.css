@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    }
+    header{
+        display: flex;
+        height: 20vh;
+        background-color: #1B1717;
+        align-items: center;
+    
+    }
+    
+    header p{
+        margin-left: 5vh;
+        color: #EEEBDD ;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    
+    article{
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        background-color:#EEEBDD ;
+        justify-content: center;
+        align-items: center;
+    }
+    #no{
+        margin-bottom: 40vh;
+        position: absolute;
+        color:#810000 ;
+        font-weight: bold;
+        font-size: 5vh;
+
+
+    }
+    footer{
+        display: flex;
+        border-top:#1B1717 5px solid ;
+        height: 9.5vh;
+        background: #EEEBDD ;
+        color:#1B1717 ;
+        flex-direction: row; 
+    }
+    
+    .player{
+    
+        width: 25vw;
+        border-right:#1B1717 5px solid ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vh;
+    }
+    #player4{
+        border: none;
+    }
+    
+    #example{
+        position: absolute;
+        color:#1B1717 ;
+        
+        margin-top:  50vh;
+        font-size: 5vh;
+    
+    }
+    
+    #name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    }
+    
+    
+    form{
+        
+    
+    
+    }
+    
+    
+    
+    #labelNick{
+        font-size: 1.5vw;
+        color: #1B1717;
+        margin-right: 6.2vw;
+    
+        font-weight: bold;
+     
+    }
+    
+    #lableServerName{
+     
+        font-size: 1.5vw;
+        color: #1B1717;
+        font-weight: bold;
+    
+      
+    
+    }
+    
+    
+    #nick{
+    
+    width: 13vw;
+    height: 5vh;
+    font-size: 1.5vw;
+    outline-color: #810000;
+    margin: 10px;
+    }
+    #serverName{
+     
+    width: 13vw;
+    height: 5vh;
+    font-size: 1.5vw;
+    outline-color: #810000;
+    margin: 10px;
+    }
+    
+    
+    
+    
+    #submit{
+    
+        height: 5vh;
+        width: 5vw;
+        background-color: #1B1717;
+        color: #EEEBDD ;
+        cursor: pointer;
+        border: none;
+        font-size: 1.1vw;
+        margin-top: 2vh ;
+    }

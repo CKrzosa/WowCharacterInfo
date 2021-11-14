@@ -52,7 +52,8 @@ fetch('https://eu.battle.net/oauth/token', {
     //Specka
     fetch(`https://eu.api.blizzard.com/profile/wow/character/${server}/${nick}/specializations?namespace=profile-eu&locale=en_GB&access_token=${dane.access_token}`, {}).then((dane) => dane.json()).then((dane) => {
         if (404 === dane.code) {
-            window.location.replace("/")
+            window.location.replace("/no")
+
 
         }
     })
